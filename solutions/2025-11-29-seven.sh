@@ -16,12 +16,12 @@ seven () {
       local x=$(echo "$m / 10" | bc)
       m=$(echo "$x - 2 * $y" | bc )
       
-      #handle negative (absolute value)
+      # Update abs for length check only
       abs_m=${m#-}
       
       ((steps++))
     done
     
-    echo "$abs_m, $steps"
+    echo "$m, $steps"
 }
 seven "$1"
